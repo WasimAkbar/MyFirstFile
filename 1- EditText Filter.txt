@@ -1,0 +1,23 @@
+EditText Filter for Input Letters in UPPERCASE, upto 10 Digits and 
+aloowing letters on 0-9/ & a\A-z-Z
+******************************************************************
+
+EditText text_filtered = (EditText) findViewById(R.id.ed01);
+        text_filtered.setFilters(new InputFilter[]{
+                new InputFilter.AllCaps(), new InputFilter.LengthFilter(10),
+
+
+        });
+
+        InputFilter filter = new InputFilter() {
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+                for (int i = start; i < end; i++) {
+                    if (!Character.isLetterOrDigit(source.charAt(i))) {
+                        return "";
+                    }
+                }
+                return null;
+            }
+        };
+        text_filtered.setFilters(new InputFilter[] { filter });
