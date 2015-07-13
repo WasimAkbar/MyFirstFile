@@ -1,4 +1,0 @@
-MultiAutoCompleteTextView mtext =
-                (MultiAutoCompleteTextView) findViewById(R.id.multiAutoCompleteTextView);
-        mtext.setAdapter(adapter);
-        mtext.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
